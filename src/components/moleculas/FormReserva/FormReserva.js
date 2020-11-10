@@ -329,7 +329,7 @@ const FormReserva = props => {
   moment.locale("es", esLocale)
   return (
     <FormContainer minHeight={minHeight} onSubmit={handleSubmit(onSubmitEvent)}>
-      <Frase>Rellene los datos para realizar su reserva</Frase>
+      <Frase>Complete los datos para realizar su reserva</Frase>
       <ItemForm margin="2px 0px 26px">
         <DateRangePicker
           startDatePlaceholderText="Fecha de ingreso"
@@ -381,14 +381,13 @@ const FormReserva = props => {
       </ItemForm>
       <ItemForm>
         <div>
-          Tipo de habitacion:
-          <div> {tipoDeHabitacionData.type} </div>
+          Habitación:  {tipoDeHabitacionData.type} 
         </div>
       </ItemForm>
-
+      <br/><br/>
       <ItemForm>
         <PrecioContainerItemTableList>
-          <p>Total a pagar:</p>
+          <p>Total:</p>
           <PrecioNumberContainer>
             {costTotal >= tipoDeHabitacionData.precioUnaNoche &&
             costTotalConFechas === 0

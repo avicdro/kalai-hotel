@@ -143,7 +143,7 @@ const FormLogin = props => {
       </LabelElement>
       {((errors.password && errors.password.type === "validate") ||
         (errors.email && errors.email.type === "validate")) && (
-        <ErrorMsj>Este ususario no existe</ErrorMsj>
+        <ErrorMsj>Usuario o contraseña incorrecto</ErrorMsj>
       )}
       <ButtomFormSubmit type="submit" value="Iniciar" />
       <Separador />

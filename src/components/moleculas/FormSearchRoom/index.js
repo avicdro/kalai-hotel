@@ -20,16 +20,17 @@ const FormContainer = styled.form`
   margin-top: 108px;
   flex-direction: column;
   border-radius: 12px;
-  max-width: 500px;
+  max-width: 700px;
   background-color: white;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 
   @media (max-width: 700px) {
     margin-top: 42px;
     max-width: 100%;
-    background-color: transparent;
+    background-color: #0000008f;
     box-shadow: none;
-    padding: 24px 0px;
+    padding: 24px;
+    color: white;
   }
 `
 const ItemForm = styled.label`
@@ -238,7 +239,7 @@ const FormSearchRoom = props => {
         <ButtomFormSubmit
           type="submit"
           value="Buscar"
-          onClick={() => navigate("/reservar/")}
+          onClick={() => navigate("/habitaciones/")}
         />
       </ItemForm>
     </FormContainer>

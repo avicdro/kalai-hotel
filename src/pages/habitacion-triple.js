@@ -1,131 +1,120 @@
-import React, { useEffect } from "react"
-import { Link } from "gatsby"
-
+import React, { useEffect, useState } from "react"
+import { connect } from "react-redux"
 import SEO from "../components/seo"
-import styled from 'styled-components'
 
-import { hotelData } from '../logic/DB/DatosHotel'
+import Modal from "react-modal"
+import FormReserva from "../components/moleculas/FormReserva/FormReserva"
+import FormLogin from "../components/moleculas/FormLogin"
 
-const Section = styled.div`
-  width: 100%;
-  padding: 40px 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-`
+import { descGeneralTipoHabitacion } from "../logic/DB/DatosHotel"
+import {
+  Section,
+  BtnReserve,
+  ContainerTexto,
+  DescRoom,
+  ImageHead,
+  TitleRoom,
+  ContainerImages,
+  CloseModalBtn,
+  ContainerbtnReserva,
+} from "../Styled-component/styledHabitacion"
 
-const ContainerTexto = styled.div`
-  max-width:  45%; 
-  min-height: 800px;
-  padding-left: 24px;
-  margin-left: 50%;
-  @media (max-width: 600px) {
-    width: 100%;
-    padding: 24px 8px;
-  }
-  @media (max-width: 860px) {
-    position: static;
-    height: auto;
-    z-index: 0;
-    margin-left: 0%;
-    margin-top: 24px;
-    max-width: 100%;
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+  overlay: {
+    zIndex: "200",
+  },
+}
 
-  }
+Modal.setAppElement("#___gatsby")
 
-`
-const ImageHead = styled.img`
-  max-width: 50%;
-  height: 100%;
-  position: absolute;
-  height: 120%;
-  z-index: -120;
-  left: 0px;
-  top: 0px;
-  @media (max-width: 860px) {
-    position: static;
-    height: auto;
-    z-index: 0;
-    max-width: 130%;
-    margin-left: -70px;
-    margin-top: -192px;
-    overflow: hidden;
-  }
-`
-const TitleRoom = styled.h1`
-  font-size: 54px;
-  color: rgba(237,242,92, 1);
-
-`
-const DescRoom = styled.div`
-  ul {
-    li {
-      margin: 2px;
-    }
-  }
-`
-const BtnReserve = styled.div`
-  float: right;
-  padding: 12px 24px;
-  font-size: 18px;
-  color: white;
-  background-color: #4cd964;
-  border-radius: 8px;
-  cursor: pointer;
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-`
-
-
-
-const HabitacionSuitPage = () => {
+const HabitacionSuitPage = props => {
+  const [modalIsOpen, setIsOpen] = useState(false)
+  const [isLogin, setIsLogin] = useState(props.isLogin)
 
   useEffect(() => {
-    console.log(hotelData)
+    if (isLogin !== props.isLogin) {
+      setIsLogin(props.isLogin)
+    }
   })
 
+  function openModal() {
+    setIsOpen(true)
+  }
 
+  function closeModal() {
+    setIsOpen(false)
+  }
   return (
     <>
-      <SEO title="Habitación Suit" />
+      <SEO title="Habitación Triple" />
       <Section>
-        <ImageHead src="/habitaciones/habitaciones-suit/hs2.jpg" alt="Image" />
         <ContainerTexto>
-
-          <TitleRoom>Habitación Triple</TitleRoom>
+          <TitleRoom>{descGeneralTipoHabitacion.triple.title}</TitleRoom>
           <DescRoom>
-
-            <p>
-            Muy acogedoras, dan una sensación de confort intemporal; diseñadas
-              para momentos especiales y estancias tranquilas. Las habitaciones
-              individuales, con 95m2, dispone dos camas y una supletoria, baño en mármol
-              con bañera y un espacioso comedor bien equipado, adaptado a tus necesidades. Además, le reciben con
-              una bebida de bienvenida.
-            </p>
+            <p>{descGeneralTipoHabitacion.triple.descLarga}</p>
             <ul>
-              <li>Concina bien equipada</li>
-              <li>Comedor</li>
-              <li>Wifi gratuito</li>
-              <li>Aire acondicionado con termostato individual</li>
-              <li>Televisión LCD-100 canales</li>
-              <li>Teléfono</li>
-              <li>Minibar</li>
-              <li>Espejo</li>
-              <li>Secador de pelo</li>
-              <li>Zapatillas</li>
-              <li>Albornoz</li>
-              <li>Escritorio</li>
-              <li>Internet ADSL</li>
-              <li>Caja fuerte individual digital </li>
+              {descGeneralTipoHabitacion.triple.caracteristicas.map(
+                (dato, index) => {
+                  return (
+                    <li
+                      className={index % 2 == 0 ? "float-left" : "float-right"}
+                    >
+                      {dato}
+                    </li>
+                  )
+                }
+              )}
             </ul>
           </DescRoom>
-          <BtnReserve> <Link to={"/reservar#simple"}> Ver displonibles </Link> </BtnReserve>
-
+          <ContainerbtnReserva>
+            <div className="precio-la-noche">La noche {descGeneralTipoHabitacion.triple.precioUnaNoche}€</div>
+            <BtnReserve onClick={() => openModal()}> Reservar </BtnReserve>
+          </ContainerbtnReserva>
         </ContainerTexto>
+        <ContainerImages>
+          <ImageHead
+            src="/habitaciones/habitaciones-suit/hs1.jpg"
+            alt="Image"
+          />
+          <ImageHead
+            src="/habitaciones/habitaciones-suit/hs2.jpg"
+            alt="Image"
+          />
+        </ContainerImages>
       </Section>
-    </>)
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <CloseModalBtn onClick={closeModal}>X</CloseModalBtn>
+
+        {isLogin ? (
+          <FormReserva typeSelected={"Doble"} />
+        ) : (
+          <>
+            <h3>
+              Lo lamento debe de estar registrado para realizar esta operación
+            </h3>
+            <FormLogin contextSite="fuera" />
+          </>
+        )}
+      </Modal>
+    </>
+  )
 }
-export default HabitacionSuitPage
+
+const mapStateToProps = state => ({
+  isLogin: state.loginRegisterUser.isLogin,
+})
+
+export default connect(mapStateToProps, null)(HabitacionSuitPage)

@@ -46,7 +46,9 @@ const TitleDesService = styled.h3`
   font-size: 42px;
   text-align: center;
 ` 
-const TextDesService = styled.p``
+const TextDesService = styled.p`
+  padding: 0 18px;
+`
 
 const ServiciosPage = () => (
   <>
@@ -68,7 +70,7 @@ const ServiciosPage = () => (
           <TitleDesService>Alquiler de salas </TitleDesService> 
         
           <TextDesService>
-            LEn nuestra web te ofrecemos un listado de salas y espacios en alquiler por horas que podrás reservar directamente de forma online con la confirmación del propio gestor de la sala. Todos los precios de las salas, ya sean para salas de reuniones, aulas de formación u otro tipo de espacios de trabajo como por ejemplo, para realizar actividades de yoga y meditación.
+            En nuestra web te ofrecemos un listado de salas y espacios en alquiler por horas que podrás reservar directamente de forma online con la confirmación del propio gestor de la sala. Todos los precios de las salas, ya sean para salas de reuniones, aulas de formación u otro tipo de espacios de trabajo como por ejemplo, para realizar actividades de yoga y meditación.
           </TextDesService>
         </DescServiceContainer>
       </ItemSection>

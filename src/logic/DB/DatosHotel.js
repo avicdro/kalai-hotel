@@ -47,7 +47,7 @@ export let hotelData = {
       libres: 0,
       usadas: 0,
     },
-    matrimoniales: {
+    matrimonial: {
       cantidad: 10,
       libres: 0,
       usadas: 0,
@@ -58,7 +58,6 @@ export let hotelData = {
       usadas: 0,
     },
   },
-
   servicios: {
     spa: {
       precio: "12$",
@@ -78,67 +77,98 @@ export let hotelData = {
   }
 }
 
-
-
-
-class Hotel {
-
-  constructor(
-    contidadHabitaciones,
-    habitaciones
-  ) {
-
-
+export const descGeneralTipoHabitacion = {
+  individual: {
+    title: "Habitación individual",
+    descLarga: ` Muy acogedoras, dan una sensación de confort intemporal; diseñadas
+    para momentos especiales y estancias tranquilas. Las habitaciones
+    individuales, con 18 m2, tienen cama individual, baño en mármol
+    con bañera y un espacioso comedor bien equipado, adaptado a tus necesidades. Además, le reciben con
+    una bebida de bienvenida.`,
+    caracteristicas: ["Concina bien equipada","Comedor","Wifi gratuito", "Aire acondicionado con termostato individual", "Televisión LCD-100 canales","Teléfono","Minibar","Espejo","Secador de pelo","Zapatillas","Albornoz","Escritorio","Internet ADSL", "Caja fuerte individual digital"],
+    precioUnaNoche: 19,
+  },
+  doble: {
+    title: "Habitación Doble",
+    descLarga: `  Muy acogedoras, dan una sensación de confort intemporal; diseñadas
+    para momentos especiales y estancias tranquilas. Las habitaciones
+    individuales, con 90 m2, tienen doble camas, baño en mármol con
+    bañera y un espacioso comedor bien equipado, adaptado a tus
+    necesidades. Además, le reciben con una bebida de bienvenida.`,
+    caracteristicas: ["Concina bien equipada","Comedor","Wifi gratuito", "Aire acondicionado con termostato individual", "Televisión LCD-100 canales","Teléfono","Minibar","Espejo","Secador de pelo","Zapatillas","Albornoz","Escritorio","Internet ADSL", "Caja fuerte individual digital"],
+    precioUnaNoche: 29,
+  },
+  triple: {
+    title: "Habitación Triple",
+    descLarga: ` Muy acogedoras, dan una sensación de confort intemporal; diseñadas
+    para momentos especiales y estancias tranquilas. Las habitaciones
+    individuales, con 95m2, dispone dos camas y una supletoria, baño en mármol
+    con bañera y un espacioso comedor bien equipado, adaptado a tus necesidades. Además, le reciben con
+    una bebida de bienvenida.`,
+    caracteristicas: ["Concina bien equipada","Comedor","Wifi gratuito", "Aire acondicionado con termostato individual", "Televisión LCD-100 canales","Teléfono","Minibar","Espejo","Secador de pelo","Zapatillas","Albornoz","Escritorio","Internet ADSL", "Caja fuerte individual digital"],
+    precioUnaNoche: 39,
   }
 }
 
 
-/**
- * @class Habitacion
- * @constructor (
- *      @param number numeroDeHabitacionId
- *      @param number cantidadCamas,
- *      @param number cantidadBaños,
- *      @param string tipoDeHabitacion,
- *      @param bool conHuesped,
- *      @param Huespedes ObjHuespedes
- * )
- */
-class Habitacion {
+// class Hotel {
 
-  constructor(
-    numeroDeHabitacionId,
-    cantidadCamas,
-    cantidadBaños,
-    tipoDeHabitacion,
-
-    conHuesped,
-    ObjHuespedes,
-  ) {
-    this.numeroDeHabitacionId = numeroDeHabitacionId;
-    this.cantidadCamas = cantidadCamas;
-    this.cantidadBaños = cantidadBaños;
-    this.tipoDeHabitacion = tipoDeHabitacion;
-    this.conHuesped = conHuesped;
-    this.ObjHuespedes = ObjHuespedes;
-  }
-}
+//   constructor(
+//     contidadHabitaciones,
+//     habitaciones
+//   ) {
 
 
-class Huespedes {
-  constructor(
-    numeroDeHabitacionId,
-    cantidadAdultos,
-    cantidadNiños,
-    servicios,
-  ) {
+//   }
+// }
 
-    this.numeroDeHabitacionId = numeroDeHabitacionId;
-    this.cantidadAdultos = cantidadAdultos;
-    this.cantidadNiños = cantidadNiños;
-    this.servicios = servicios;
-  }
-}
+
+// /**
+//  * @class Habitacion
+//  * @constructor (
+//  *      @param number numeroDeHabitacionId
+//  *      @param number cantidadCamas,
+//  *      @param number cantidadBaños,
+//  *      @param string tipoDeHabitacion,
+//  *      @param bool conHuesped,
+//  *      @param Huespedes ObjHuespedes
+//  * )
+//  */
+// class Habitacion {
+
+//   constructor(
+//     numeroDeHabitacionId,
+//     cantidadCamas,
+//     cantidadBaños,
+//     tipoDeHabitacion,
+
+//     conHuesped,
+//     ObjHuespedes,
+//   ) {
+//     this.numeroDeHabitacionId = numeroDeHabitacionId;
+//     this.cantidadCamas = cantidadCamas;
+//     this.cantidadBaños = cantidadBaños;
+//     this.tipoDeHabitacion = tipoDeHabitacion;
+//     this.conHuesped = conHuesped;
+//     this.ObjHuespedes = ObjHuespedes;
+//   }
+// }
+
+
+// class Huespedes {
+//   constructor(
+//     numeroDeHabitacionId,
+//     cantidadAdultos,
+//     cantidadNiños,
+//     servicios,
+//   ) {
+
+//     this.numeroDeHabitacionId = numeroDeHabitacionId;
+//     this.cantidadAdultos = cantidadAdultos;
+//     this.cantidadNiños = cantidadNiños;
+//     this.servicios = servicios;
+//   }
+// }
 
 
 

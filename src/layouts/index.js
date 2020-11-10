@@ -21,10 +21,9 @@ Modal.setAppElement("#___gatsby")
 const LayoutContainer = styled.div``
 const MainStyled = styled.main`
   height: 100%;
-  width: 80%;
   min-height: 100vh;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 50px;
   @media (max-width: 800px) {
     width: 100%;
   }

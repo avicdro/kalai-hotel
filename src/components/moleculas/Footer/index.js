@@ -13,13 +13,11 @@ const FooterStyled = styled.footer`
 const ItemsContainer = styled.div`
   display: flex;
   width: 85%;
-
   margin: 0 auto;
-  align-items: center;
   justify-content: space-around;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  padding: 50px 24px;
+  padding: 50px 24px 32px;
   @media (max-width: 600px) {
     max-width: 100%;
     padding: 24px 4px;
@@ -47,7 +45,7 @@ const ContainerUbicacionRRSS = styled.div`
   display: flex;
   flex-direction: column;
   width: 30%;
-
+  align-self: center;
   @media (max-width: 800px) {
     width: 100%;
     padding: 24px 40px;
@@ -61,7 +59,7 @@ const ContainerUbicacionRRSS = styled.div`
 
 const ItemRight = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 60%;
@@ -131,6 +129,7 @@ const IconRRSS = styled.a`
 
 const ServiciosContainer = styled.div`
   min-height: 120px;
+  margin: 12px;
   a {
     display: block;
     text-decoration: none;
@@ -140,6 +139,7 @@ const ServiciosContainer = styled.div`
 
 const HabitacionesContainer = styled.div`
   min-height: 120px;
+  margin: 12px;
   a {
     display: block;
     text-decoration: none;
@@ -161,6 +161,19 @@ const Footer = () => {
           </p>
         </ItemLeft>
         <ItemRight>
+        <ServiciosContainer>
+            <h4>Servicios</h4>
+            <Link to={"/servicios#parkin"}>Estacionamiento</Link>
+            <Link to={"/servicios#bar"}>Bar</Link>
+            <Link to={"/servicios#estacionamiento"}>Estacionamiento</Link>
+            <Link to={"/servicios#serviceRoom"}>Servicio a la habitación</Link>
+          </ServiciosContainer>
+          <HabitacionesContainer>
+            <h4>Habitaciones</h4>
+            <Link to={"/habitacion-individual/"}>Individual</Link>
+            <Link to={"/habitacion-doble/"}>Doble</Link>
+            <Link to={"/habitacion-triple/"}>Triple</Link>
+          </HabitacionesContainer>
           <ContainerUbicacionRRSS>
             <ContainerRRSS>
               <IconRRSS
@@ -238,19 +251,7 @@ const Footer = () => {
               Ubicacion Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </Ubicacion>
           </ContainerUbicacionRRSS>
-          <ServiciosContainer>
-            <h4>Servicios</h4>
-            <Link to={"/servicios#parkin"}>Estacionamiento</Link>
-            <Link to={"/servicios#bar"}>Bar</Link>
-            <Link to={"/servicios#estacionamiento"}>Estacionamiento</Link>
-            <Link to={"/servicios#serviceRoom"}>Servicio a la habitación</Link>
-          </ServiciosContainer>
-          <HabitacionesContainer>
-            <h4>Habitaciones</h4>
-            <Link to={"/habitacion-individual/"}>Individual</Link>
-            <Link to={"/habitacion-doble/"}>Doble</Link>
-            <Link to={"/habitacion-triple/"}>Triple</Link>
-          </HabitacionesContainer>
+        
         </ItemRight>
       </ItemsContainer>
 
