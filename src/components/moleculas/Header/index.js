@@ -25,7 +25,7 @@ class Header extends React.Component {
       isOpenBurgerMenu: false,
       isMobile:
         typeof window !== `undefined`
-          ? window.innerWidth <= 800
+          ? window.innerWidth <= 900
             ? true
             : false
           : false,
@@ -49,11 +49,12 @@ class Header extends React.Component {
   }
 
   handleEventResize = () => {
-    if (window.innerWidth <= 800) {
+    if (window.innerWidth <= 900) {
       this.setState({ isMobile: true })
       return
     } else {
       this.setState({ isMobile: false })
+      return
     }
   }
   handleBurgerMenu = () => {

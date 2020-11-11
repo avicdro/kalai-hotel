@@ -165,7 +165,7 @@ const HabitacionesPage = props => {
         ) : (
           <>
             <h3>
-              Lo lamento debe de estar registrado para realizar esta operación
+              Debe de estar registrado para poder reservar 
             </h3>
             <FormLogin contextSite="fuera" />
           </>

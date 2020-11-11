@@ -118,8 +118,8 @@ const FormRegister = props => {
 
   return (
     <FormContainer onSubmit={handleSubmit(onSubmit)}>
-      Crea tu cuenta Crea una cuenta para utilizar todos nuestros servicios
-      fácilmente, y resivir buenas ofertas.
+      Crea una cuenta para utilizar todos nuestros servicios
+      fácilmente, y obtener buenas ofertas.
       <Separador />
       <LabelElement>
         E-mail
