@@ -1,7 +1,7 @@
 module.exports = {
-  pathPrefix: "/apartamento",
+  pathPrefix: "/",
   siteMetadata: {
-    title: `Es tu Hotel Apartamento`,
+    title: `kalai Hotel`,
     description: `Reserva una habitación y disfruta de unas vacaciones unicas . Realizada para un proyecto en la universidad,`,
     author: `@avicdro`,
   },
@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        ssr: false,
+        ssr: true,
         displayName: false,
         minify: false,
       },
@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `es-tu-hotel-apartamento`,
+        name: `kalai-hotel`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `rgba(237,242,92, 1)`,
