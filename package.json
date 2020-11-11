@@ -1,9 +1,9 @@
 {
-  "name": "apartamento",
+  "name": "kalai",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Avicdro",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.18.4",
@@ -44,12 +44,12 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "npm run clean && npm run build && gh-pages -d public -b master",
+    "deploy": "npm run clean && npm run build",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/avicdro/kalai-hotel"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
